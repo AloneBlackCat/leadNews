@@ -46,7 +46,7 @@
         <jsoup.version>1.10.2</jsoup.version>
         <jwt.version>0.9.1</jwt.version>
         <fastjson.version>1.2.58</fastjson.version>
-        <fastjson.dataformat.version>2.9.10</fastjson.dataformat.version>
+        <fastjson.dataformat.version>2.9.7</fastjson.dataformat.version>
         <spring.jwt.version>1.0.9.RELEASE</spring.jwt.version>
         <spring.boot.admin.version>2.1.6</spring.boot.admin.version>
         <spring.cloud.version>Hoxton.SR10</spring.cloud.version>
@@ -62,6 +62,8 @@
         <kafka.version>2.6.6</kafka.version>
         <kafka.client.version>2.5.1</kafka.client.version>
         <reflections.version>0.9.11</reflections.version>
+        <swagger.version>2.9.2</swagger.version>
+        <knife4j.version>2.0.2</knife4j.version>
         <com.alibaba.cloud>2.2.5.RELEASE</com.alibaba.cloud>
         <xxl.job.version>2.2.0-SNAPSHOT</xxl.job.version>
     </properties>
@@ -194,7 +196,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-cbor</artifactId>
-                <version>${fastjson.dataformat.version}</version>
+                <version>2.9.9</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -289,18 +291,18 @@
             </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-                <version>4.4.0</version>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>3.0.0</version>
+                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>3.0.0</version>
+                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
