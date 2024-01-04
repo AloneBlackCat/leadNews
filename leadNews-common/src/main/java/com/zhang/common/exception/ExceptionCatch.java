@@ -1,7 +1,7 @@
 package com.zhang.common.exception;
 
 
-import com.zhang.model.common.dtos.ResponseResult;
+import com.zhang.model.common.dtos.Result;
 import com.zhang.model.common.enums.AppHttpCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,11 +19,11 @@ public class ExceptionCatch {
      */
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResponseResult exception(Exception e){
+    public <T> Result<T> exception(Exception e){
         e.printStackTrace();
         log.error("catch exception:{}",e.getMessage());
 
-        return ResponseResult.errorResult(AppHttpCodeEnum.SERVER_ERROR);
+        return Result.error(AppHttpCodeEnum.SERVER_ERROR);
     }
 
     /**
@@ -33,8 +33,8 @@ public class ExceptionCatch {
      */
     @ExceptionHandler(CustomException.class)
     @ResponseBody
-    public ResponseResult exception(CustomException e){
+    public <T> Result<T> exception(CustomException e){
         log.error("catch exception:{}",e);
-        return ResponseResult.errorResult(e.getAppHttpCodeEnum());
+        return Result.error(e.getAppHttpCodeEnum());
     }
 }

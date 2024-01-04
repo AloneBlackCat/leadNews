@@ -2,18 +2,18 @@ package com.zhang.model.common.dtos;
 
 import java.io.Serializable;
 
-public class PageResponseResult extends ResponseResult implements Serializable {
+public class PageResult extends Result implements Serializable {
     private Integer currentPage;
     private Integer size;
     private Integer total;
 
-    public PageResponseResult(Integer currentPage, Integer size, Integer total) {
+    public PageResult(Integer currentPage, Integer size, Integer total) {
         this.currentPage = currentPage;
         this.size = size;
         this.total = total;
     }
 
-    public PageResponseResult() {
+    public PageResult() {
 
     }
 
