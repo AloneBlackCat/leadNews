@@ -68,6 +68,15 @@
         <xxl.job.version>2.2.0-SNAPSHOT</xxl.job.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <!-- 参数校验 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <!--日志处理包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

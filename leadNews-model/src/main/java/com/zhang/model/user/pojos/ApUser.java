@@ -4,7 +4,13 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -19,6 +25,7 @@ import java.util.Date;
  */
 @Data
 @TableName("ap_user")
+@Validated
 public class ApUser implements Serializable {
 
     @Serial
@@ -34,24 +41,29 @@ public class ApUser implements Serializable {
      * 密码、通信等加密盐
      */
     @TableField("salt")
+    @JsonIgnore
     private String salt;
 
     /**
      * 用户名
      */
     @TableField("name")
+    @NotEmpty
     private String name;
 
     /**
      * 密码,md5加密
      */
     @TableField("password")
+    @JsonIgnore
+    @NotEmpty
     private String password;
 
     /**
      * 手机号
      */
     @TableField("phone")
+    @Pattern(regexp = "/^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\d{8}$/")
     private String phone;
 
     /**
@@ -100,6 +112,7 @@ public class ApUser implements Serializable {
      * 注册时间
      */
     @TableField("created_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH-mm-ss")
     private Date createdTime;
 
 }

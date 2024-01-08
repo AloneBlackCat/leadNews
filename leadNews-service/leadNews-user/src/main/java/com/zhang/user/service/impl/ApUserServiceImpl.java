@@ -47,7 +47,6 @@ public class ApUserServiceImpl extends ServiceImpl<ApUserMapper, ApUser> impleme
             HashMap<String, Object> map = new HashMap<>();
             map.put("token",token);
             map.put("user",apUser);
-
             return Result.success(map);
         } else {
             // 游客登录
